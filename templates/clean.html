@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{%block title%}Data{%endblock%}
+{%block content%}
+<h1>Clean Data</h1>
+<h2>User Data</h2>
+    {% for user in data["users"] %}
+<p>
+    {{user["name"]}}, id-{{user["id"]}}, friends-{{user["friends"]}}, Liked_Pages-{{user["liked_pages"]}}
+</p>
+    
+{% endfor %}
+
+<h2>Page Data</h2>
+{% for page in data["pages"] %}
+    <p>
+        Page_id-{{page["id"]}}, Title-{{page["name"]}}
+    </p>
+{% endfor %}
+<br>
+<br>
+<h3>Find Mutual Friends:-</h3>
+<a href="{{url_for('mutual_friends')}}">Click here</a>
+<br>
+<br>
+<h3>Find Recomended Pages:-</h3>
+<a href="{{url_for('mutual_pages')}}">Click here</a>
+
+{%endblock%}

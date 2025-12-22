@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{%block title%}Home{%endblock%}
+
+{%block content%}
+<h1>Project:- Coders Of Delhi</h1>
+<a href="{{url_for('sample')}}">See Sample Data</a><br><br>
+<a href="{{url_for('messy')}}">See Messy Data</a><br><br>
+<a href="{{url_for('clean')}}">See Cleaned Data</a>
+{%endblock%}

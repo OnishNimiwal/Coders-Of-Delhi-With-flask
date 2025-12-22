@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Page Recommendations{% endblock %}
+
+{% block content %}
+<h1>Find Pages You Might Like</h1>
+
+<form action="{{ url_for('mutual_pages') }}" method="POST">
+    <input
+        type="number"
+        name="user_id"
+        placeholder="Enter User ID"
+        required
+    >
+    <input type="submit" value="Find Pages">
+</form>
+
+
+
+{% if recommendations %}
+    <h3>Recommended Pages</h3>
+    <ul>
+        {% for page in recommendations %}
+            <li>Page ID: {{ page }}</li>
+        {% endfor %}
+    </ul>
+
+{% elif searched and recommendations is none %}
+    <p style="color:red;">User ID not found.</p>
+
+{% elif searched %}
+    <p>No page recommendations found.</p>
+{% endif %}
+
+{% endblock %}

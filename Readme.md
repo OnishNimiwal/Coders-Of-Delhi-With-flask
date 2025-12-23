@@ -34,9 +34,9 @@ backend development** without relying on heavy data-science libraries.
 ```text
 project-root/
 ├── .venv/
-│   ├── Include
-│   ├── Lib
-│   ├── Scripts
+│   └── Include
+│   └── Lib
+│   └── Scripts
 │   └── pyvenv.cfg
 ├── Code_book.json
 ├── OS_Structure.py
@@ -45,10 +45,11 @@ project-root/
 ├── data.json
 ├── messy_data.json
 ├── requirments.txt
-└── templates/
-    ├── base.html
-    ├── clean.html
-    ├── find_mutual_pages.html
-    ├── home.html
-    ├── messy.html
-    └── sample.html
+├── templates/
+│   └── base.html
+│   └── clean.html
+│   └── find_mutual.html
+│   └── find_mutual_pages.html
+│   └── home.html
+│   └── messy.html
+│   └── sample.html

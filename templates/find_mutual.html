@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 
-{% block title %}Page Recommendations{% endblock %}
+{% block title %}Mutual Friends{% endblock %}
 
 {% block content %}
-<h1>Find Pages You Might Like</h1>
+<h1>Find Mutual Friends</h1>
 
-<form action="{{ url_for('mutual_pages') }}" method="POST">
+<form action="{{ url_for('mutual_friends') }}" method="POST">
     <input
         type="number"
         name="user_id"
         placeholder="Enter User ID"
         required
     >
-    <input type="submit" value="Find Pages">
+    <input type="submit" value="Find Mutual Friends">
 </form>
 
 {% if recommendations %}
-    <h3>Recommended Pages</h3>
+    <h3>Suggested Friends</h3>
     <ul>
-        {% for page in recommendations %}
-            <li>Page ID: {{ page }}</li>
+        {% for user in recommendations %}
+            <li>User ID: {{ user }}</li>
         {% endfor %}
     </ul>
 
@@ -27,6 +27,6 @@
     <p style="color:red;">User ID not found.</p>
 
 {% elif searched %}
-    <p>No page recommendations found.</p>
+    <p>No mutual friends found.</p>
 {% endif %}
 {% endblock %}
